@@ -8,7 +8,7 @@ public class TestRunner {
     Customer customer;
 
     @Test
-    public void doLogin () throws ConfigurationException, IOException {
+    public void doLogin() throws ConfigurationException, IOException {
         customer = new Customer();
         customer.callingCustomerLoginAPI();
     }
@@ -21,7 +21,7 @@ public class TestRunner {
 
     @Test
     public void searchCustomer() throws IOException {
-        customer=new Customer();
+        customer = new Customer();
         customer.callingSearchCustomerAPI();
     }
 }

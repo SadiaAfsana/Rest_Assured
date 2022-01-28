@@ -23,7 +23,7 @@ public class Customer {
 
         props.load(file);
 
-        RestAssured.baseURI=props.getProperty("baseURL");
+        RestAssured.baseURI = props.getProperty("baseURL");
         Response response =
                 given()
                         .contentType("application/json")
@@ -37,19 +37,19 @@ public class Customer {
                         .assertThat().statusCode(200).extract().response();
 
         JsonPath resObj = response.jsonPath();
-        String token =  resObj.get("token");
-        Utils.setEnvVariable("token",token);
-        System.out.println("token : " +token);
+        String token = resObj.get("token");
+        Utils.setEnvVariable("token", token);
+        System.out.println("token : " + token);
     }
 
     public void callingCustomerListAPI() throws IOException {
 
         props.load(file);
-        RestAssured.baseURI=props.getProperty("baseURL");
+        RestAssured.baseURI = props.getProperty("baseURL");
         Response response =
                 given()
                         .contentType("application/json")
-                        .header("Authorization",props.getProperty("token"))
+                        .header("Authorization", props.getProperty("token"))
                 .when()
                         .get("/customer/api/v1/list")
 
@@ -60,17 +60,17 @@ public class Customer {
 
         JsonPath resObj = response.jsonPath();
         String id = resObj.get("Customers[0].id").toString();
-        Assert.assertEquals("101",id);
+        Assert.assertEquals("101", id);
     }
 
     public void callingSearchCustomerAPI() throws IOException {
 
         props.load(file);
-        RestAssured.baseURI=props.getProperty("baseURL");
+        RestAssured.baseURI = props.getProperty("baseURL");
         Response response =
                 given()
                         .contentType("application/json")
-                        .header("Authorization",props.getProperty("token"))
+                        .header("Authorization", props.getProperty("token"))
                 .when()
                         .get("/customer/api/v1/get/101")
 
