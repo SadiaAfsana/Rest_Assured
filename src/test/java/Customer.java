@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.put;
 
 public class Customer {
 
@@ -145,9 +146,9 @@ public class Customer {
         RestAssured.baseURI = props.getProperty("baseURL");
         Response response =
                 given()
-                .contentType("application/json")
-                .header("Authorization", props.getProperty("token"))
-                .when()
+                        .contentType("application/json")
+                        .header("Authorization", props.getProperty("token"))
+                        .when()
                         .body("" +
                                 "{\"id\":" + props.getProperty("id") + ",\n" +
                                 "    \"name\":\"" + props.getProperty("name") + "\", \n" +
@@ -155,9 +156,9 @@ public class Customer {
                                 "    \"address\":\"" + props.getProperty("address") + "\",\n" +
                                 "    \"phone_number\":\"" + props.getProperty("phone_number") + "\"}")
 
-                .delete("/customer/api/v1/delete/"+props.getProperty("id"))
-                .then()
-                .assertThat().statusCode(200).extract().response();
+                        .delete("/customer/api/v1/delete/" + props.getProperty("id"))
+                        .then()
+                        .assertThat().statusCode(200).extract().response();
     }
 
     public void updateCustomer() throws IOException {
@@ -178,5 +179,6 @@ public class Customer {
                         .put("/customer/api/v1/update/101")
                         .then()
                         .assertThat().statusCode(200).extract().response();
+
     }
 }
