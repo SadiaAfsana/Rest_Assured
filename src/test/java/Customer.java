@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.util.Properties;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.urlEncodingEnabled;
 
 public class Customer {
 
@@ -120,7 +119,7 @@ public class Customer {
 
     }
 
-    public void createCustomer() throws IOException, ConfigurationException {
+    public void createCustomer() throws IOException {
         props.load(file);
         RestAssured.baseURI = props.getProperty("baseURL");
         Response response =

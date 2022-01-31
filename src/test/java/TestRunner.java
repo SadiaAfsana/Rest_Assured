@@ -1,7 +1,5 @@
 import org.apache.commons.configuration.ConfigurationException;
 import org.junit.Test;
-
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class TestRunner {
@@ -33,7 +31,7 @@ public class TestRunner {
     }
 
     @Test
-    public void createRandomCustomer() throws IOException, ConfigurationException {
+    public void createRandomCustomer() throws IOException {
         customer = new Customer();
         customer.createCustomer();
     }
