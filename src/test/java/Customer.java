@@ -139,4 +139,37 @@ public class Customer {
 
         System.out.println(response.asString());
     }
+
+    public void deleteCustomer() throws IOException {
+        props.load(file);
+        RestAssured.baseURI = props.getProperty("baseURL");
+        Response response =
+                given()
+                .contentType("application/json")
+                .header("Authorization", props.getProperty("token"))
+                .when()
+                        .body("" +
+                                "{\"id\":" + props.getProperty("id") + ",\n" +
+                                "    \"name\":\"" + props.getProperty("name") + "\", \n" +
+                                "    \"email\":\"" + props.getProperty("email") + "\",\n" +
+                                "    \"address\":\"" + props.getProperty("address") + "\",\n" +
+                                "    \"phone_number\":\"" + props.getProperty("phone_number") + "\"}")
+
+                .delete("/customer/api/v1/delete/"+props.getProperty("id"))
+                .then()
+                .assertThat().statusCode(200).extract().response();
+    }
+
+    public void updateCustomer() throws IOException {
+        props.load(file);
+        RestAssured.baseURI = props.getProperty("baseURL");
+        Response response =
+                given()
+                        .contentType("application/json")
+                        .header("Authorization", props.getProperty("token"))
+                        .when()
+                        .delete("/customer/api/v1/delete/"+props.getProperty("id"))
+                        .then()
+                        .assertThat().statusCode(200).extract().response();
+    }
 }

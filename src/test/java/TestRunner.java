@@ -35,4 +35,14 @@ public class TestRunner {
         customer = new Customer();
         customer.createCustomer();
     }
+    @Test
+    public void deleteCustomer() throws IOException {
+        customer = new Customer();
+        customer.deleteCustomer();
+    }
+    @Test
+    public void updateCustomer() throws IOException {
+        customer = new Customer();
+        customer.updateCustomer();
+    }
 }
