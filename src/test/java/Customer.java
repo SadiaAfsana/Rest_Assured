@@ -168,7 +168,14 @@ public class Customer {
                         .contentType("application/json")
                         .header("Authorization", props.getProperty("token"))
                         .when()
-                        .delete("/customer/api/v1/delete/"+props.getProperty("id"))
+                        .body("{\n" +
+                                "    \"id\": 101,\n" +
+                                "    \"name\": \"Mr. Jamal Islam\",\n" +
+                                "    \"email\": \"mrjamal@test.com\",\n" +
+                                "    \"address\": \"Dhanmondi,Dhaka\",\n" +
+                                "    \"phone_number\": \"01502020110\"\n" +
+                                "}")
+                        .put("/customer/api/v1/update/101")
                         .then()
                         .assertThat().statusCode(200).extract().response();
     }
