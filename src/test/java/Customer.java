@@ -149,13 +149,6 @@ public class Customer {
                         .contentType("application/json")
                         .header("Authorization", props.getProperty("token"))
                         .when()
-                        .body("" +
-                                "{\"id\":" + props.getProperty("id") + ",\n" +
-                                "    \"name\":\"" + props.getProperty("name") + "\", \n" +
-                                "    \"email\":\"" + props.getProperty("email") + "\",\n" +
-                                "    \"address\":\"" + props.getProperty("address") + "\",\n" +
-                                "    \"phone_number\":\"" + props.getProperty("phone_number") + "\"}")
-
                         .delete("/customer/api/v1/delete/" + props.getProperty("id"))
                         .then()
                         .assertThat().statusCode(200).extract().response();
