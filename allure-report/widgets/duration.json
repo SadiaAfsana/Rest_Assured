@@ -1,0 +1,71 @@
+[ {
+  "uid" : "ae10c9666562b880",
+  "name" : "getCustomerList",
+  "time" : {
+    "start" : 1643960541936,
+    "stop" : 1643960543901,
+    "duration" : 1965
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "80ad94eb276b3855",
+  "name" : "searchCustomer",
+  "time" : {
+    "start" : 1643960543923,
+    "stop" : 1643960546021,
+    "duration" : 2098
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4fa36bcd2149dafa",
+  "name" : "generateCustomerInfo",
+  "time" : {
+    "start" : 1643960546034,
+    "stop" : 1643960546807,
+    "duration" : 773
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "be03691bdea302e5",
+  "name" : "createRandomCustomer",
+  "time" : {
+    "start" : 1643960546807,
+    "stop" : 1643960548785,
+    "duration" : 1978
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "76c31516957ca420",
+  "name" : "doLogin",
+  "time" : {
+    "start" : 1643960537676,
+    "stop" : 1643960541883,
+    "duration" : 4207
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1296457b2a4d0d56",
+  "name" : "deleteCustomer",
+  "time" : {
+    "start" : 1643960548798,
+    "stop" : 1643960550717,
+    "duration" : 1919
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "70344b7d33c99e0b",
+  "name" : "updateCustomer",
+  "time" : {
+    "start" : 1643960550734,
+    "stop" : 1643960552679,
+    "duration" : 1945
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

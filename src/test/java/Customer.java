@@ -87,7 +87,7 @@ public class Customer {
 
         JsonPath jsonObj = response.jsonPath();
         String name = jsonObj.get("name");
-        Assert.assertEquals("Mr. Kamal", name);
+        Assert.assertEquals("Mr. Jamal Islam", name);
         //Assert.assertEquals("Mr. Kamal",jsonObj.get("name").toString());
     }
 
